@@ -15,3 +15,11 @@ python score_convert.py -i input.csv -o output.json
 `input.csv`是输入的csv文件名，`output.json`是输出的json文件名。请根据实际情况替换。
 
 可以使用`-h`或`--help`开关查看帮助说明。
+
+## 注意
+
+使用时如果`output.json`文件已存在，则会**无提示直接覆盖**。如需保留原文件，请提前自行备份。
+
+## 鸣谢
+
+**TEfish**——测试工作
