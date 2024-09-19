@@ -1,10 +1,10 @@
-from typing import Tuple
+from typing import List, Tuple
 import sys, getopt
-import os, codecs
+import codecs
 import csv, json
 
 
-def print_help(code: int=0, end: str='\n') -> None:
+def print_help(code: int = 0, end: str = '\n') -> None:
     help_str = '''\
 Usage:
     python {0} <input_switch> <input_file> <output_switch> <output_file>
@@ -18,7 +18,7 @@ Options:
     sys.exit(code)
 
 
-def parse_args(options: list[Tuple[str, str]]) -> Tuple[str, str]:
+def parse_args(options: List[Tuple[str, str]]) -> Tuple[str, str]:
     input_file: str = None
     output_file: str = None
     for (opt, arg) in options:
@@ -34,22 +34,22 @@ def parse_args(options: list[Tuple[str, str]]) -> Tuple[str, str]:
 
 
 def convert_data(input: str, output: str) -> None:
-    with codecs.open(input, 'r', encoding='utf-8') as i,\
-         codecs.open(output, 'w', encoding='utf-8') as o:
+    with codecs.open(input, 'r') as i, \
+            codecs.open(output, 'w', encoding='utf-8') as o:
         w_list = []
         d = {
             'DX': 'dx', 'SD': 'std',
-             'Re:MASTER': 'remaster',
-             'Master': 'master',
-             'Expert': 'expert',
-             'Advanced': 'advanced',
-             'Basic': 'basic'
-             }
+            'Re:MASTER': 'remaster',
+            'Master': 'master',
+            'Expert': 'expert',
+            'Advanced': 'advanced',
+            'Basic': 'basic'
+        }
         for r_line in csv.DictReader(i):
             item = {
-                'sheetId' : r_line['曲名'] + '__dxrt__' + d[r_line['类别']] + '__dxrt__' + d[r_line['难度']],
+                'sheetId': r_line['曲名'] + '__dxrt__' + d[r_line['类别']] + '__dxrt__' + d[r_line['难度']],
                 'achievementRate': float(r_line['达成率'])
-                }
+            }
             w_list.append(item)
         json.dump(w_list, o, ensure_ascii=False)
 
