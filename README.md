@@ -6,8 +6,10 @@
 
 ## 用法
 
-```python
-python -i input.csv -o output.json
+```shell
+git clone https://github.com/y2-Whyto/diving-fish-maimai-csv-to-dxrating-json.git
+cd diving-fish-maimai-csv-to-dxrating-json
+python score_convert.py -i input.csv -o output.json
 ```
 
 `input.csv`是输入的csv文件名，`output.json`是输出的json文件名。请根据实际情况替换。
