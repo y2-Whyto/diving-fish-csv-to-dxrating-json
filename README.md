@@ -1,4 +1,4 @@
-# diving-fish.com CSV \(maimai DX\) -> dxrating.net JSON
+# diving-fish.com CSV \(maimai DX\) → dxrating.net JSON
 
 在水鱼查分器中导出.csv舞萌成绩后，使用本脚本可以转换为dxrating.net格式的.json成绩，用于在dxrating.net上传。
 
