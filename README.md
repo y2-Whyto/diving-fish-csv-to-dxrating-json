@@ -1,8 +1,8 @@
 # diving-fish.com CSV \(maimai DX\) → dxrating.net JSON
 
-在水鱼查分器中导出.csv舞萌成绩后，使用本脚本可以转换为dxrating.net格式的.json成绩，用于在dxrating.net上传。
+[在水鱼查分器中导出.csv舞萌成绩](https://www.diving-fish.com/maimaidx/prober/#Export)后，使用本脚本可以转换为dxrating.net格式的.json成绩，用于[在dxrating.net上传](https://dxrating.net/rating)。
 
-（虽然感觉好像传了也没什么luan用）
+> （虽然感觉好像传了也没什么luan用）
 
 ## 用法
 
