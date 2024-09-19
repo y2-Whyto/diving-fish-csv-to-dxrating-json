@@ -58,7 +58,7 @@ if __name__ == '__main__':
     try:
         (opts, args) = getopt.getopt(sys.argv[1:], "hi:o:", ["help", "input=", "output="])
     except getopt.GetoptError:
-        print_help()
+        print_help(1)
         sys.exit(1)
     input_file, output_file = parse_args(opts)
 
