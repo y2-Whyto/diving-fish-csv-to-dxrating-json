@@ -46,6 +46,7 @@ def convert_data(input: str, output: str) -> None:
             'Basic': 'basic'
         }
         for r_line in csv.DictReader(i):
+            if r_line['难度'] not in d.keys(): continue
             item = {
                 'sheetId': r_line['曲名'] + '__dxrt__' + d[r_line['类别']] + '__dxrt__' + d[r_line['难度']],
                 'achievementRate': float(r_line['达成率'])
